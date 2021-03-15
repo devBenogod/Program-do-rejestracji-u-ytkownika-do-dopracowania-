@@ -1,7 +1,6 @@
-#################################################Program do rejestracji użytkownika na platformie x##################################################################
-
 import time
-import sys
+
+max_pesel = len("11111111111")
 
 print("Witaj użytkowniku na naszej platformie. Aby się zarejestrować, postępuj zgodnie z następnymi krokami...")
 
@@ -10,38 +9,41 @@ time.sleep(1)
 login = input("Wpisz swój login: ")
 print("login: ", login)
 
+password = input("Brawo! Wpisz teraz swoje hasło: ")
+password_accept = input("Potwierdź swoje hasło :")
 
-haslo = input("Brawo! Wpisz teraz swoje hasło: ")
-haslo_accept = input("Potwierdź swoje hasło :")
-
-while haslo != haslo_accept:
+while password != password_accept:
     print("Hasła się nie zgadzają, spróbuj jeszcze raz!")
-    haslo = input("Brawo! Wpisz teraz swoje hasło: ")
-    haslo_accept = input("Potwierdź swoje hasło :")
-
-if haslo == haslo_accept:
+    password = input("Wpisz teraz swoje hasło: ")
+    password_accept = input("Potwierdź swoje hasło :")
+if password == password_accept:
     pass
     
+
+
 print("login: ", login)
-print("haslo: ", haslo)
+print("haslo: ", password)
+
 
 
 pesel = input("Wpisz swój numer pesel: ")
 
+while len(pesel) != max_pesel:
+    print("Pesel musi posiadać 11cyfr, spróbuj jeszcze raz.")
+    pesel = input("Wpisz swój numer pesel: ")
+if len(pesel) == max_pesel:
+    pass
+
+
 print("login: ", login)
-print("haslo: ", haslo)
+print("haslo: ", password)
 print("pesel: ", pesel)
 
-wiek = input("Wpisz swój wiek: ")
+age = input("Wpisz swój wiek: ")
 
 print("Witamy w naszej aplikacji! Oto twoje dane rejestracyjne. Zostały one przesłane również na maila. Dziękujemy za zaufanie.")
 print("login: ", login)
-print("haslo: ", haslo)
+print("haslo: ", password)
 print("pesel: ", pesel)
-print("wiek: ", wiek)
+print("wiek: ", age)
     
-
-
-
-
-
